@@ -9,8 +9,14 @@
 .TemporaryItems
 .fseventsd
 
-# Executáveis gerados durante a compilação
-*.exe
-*.out
+# Artefatos gerados pelo GCC
 *.o
-build/
+*.obj
+*.out
+*.exe
+*.elf
+*.bin
+*.d
+*.gcda
+*.gcno
+*.gcov
