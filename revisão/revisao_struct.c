@@ -34,9 +34,10 @@ void mostrar_sala(Sala sala) {
     printf("Capacidade: %d\n", sala.capacidade);
     for (int i = 0; i < sala.capacidade; i++)
     {
-        printf("Aluno - %s, ",sala.alunos[i].nome);
-        printf("Matricula - %d, ",sala.alunos[i].mat);
-        printf("Idade - %d\n",sala.alunos[i].idade);
+        //prints usando o vetor alunos como ponteiro
+        printf("Nome do aluno %d: %s\n", i+1, (sala.alunos + i)->nome);
+        printf("Matricula do aluno %d: %d\n", i+1, (sala.alunos + i)->mat);
+        printf("Idade do aluno %d: %d\n", i+1, (sala.alunos + i)->idade);
     }
 }
 
@@ -54,11 +55,11 @@ Sala preencher_sala() {
     for (int i = 0; i < sala.capacidade; i++)
     {
         printf("Informe o nome do aluno %d ",i+1);
-        scanf(" %s", sala.alunos[i].nome);
+        scanf(" %s", (sala.alunos + i)->nome);
         printf("Informe a matricula do aluno %d ",i+1);
-        scanf("%d", &sala.alunos[i].mat);
+        scanf("%d", &(sala.alunos + i)->mat);
         printf("Informe a idade do aluno %d ",i+1);
-        scanf("%d", &sala.alunos[i].idade);
+        scanf("%d", &(sala.alunos + i)->idade);
     }
     return sala;
 }
@@ -77,6 +78,7 @@ int main()
     for (int i = 0; i < col.capacidade; i++)
         col.salas[i] = preencher_sala();
     
+    printf("Colegio: %s\n", col.nome);
     for (int i = 0; i < col.capacidade; i++)
         mostrar_sala(col.salas[i]);
 
