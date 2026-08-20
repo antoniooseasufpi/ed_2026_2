@@ -38,6 +38,11 @@ void mostrar_sala(Sala sala) {
         printf("Nome do aluno %d: %s\n", i+1, (sala.alunos + i)->nome);
         printf("Matricula do aluno %d: %d\n", i+1, (sala.alunos + i)->mat);
         printf("Idade do aluno %d: %d\n", i+1, (sala.alunos + i)->idade);
+
+        //prints usando o vetor alunos como vetor normalmente
+        printf("Nome do aluno %d: %s\n", i+1, sala.alunos[i].nome);
+        printf("Matricula do aluno %d: %d\n", i+1, sala.alunos[i].mat);
+        printf("Idade do aluno %d: %d\n", i+1, sala.alunos[i].idade);
     }
 }
 
